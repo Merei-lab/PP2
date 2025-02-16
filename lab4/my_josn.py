@@ -800,7 +800,7 @@ jsonn="""
 }"""
 data=json.loads(jsonn)
 llist=data["imdata"]
-# print(data["imdata"]["l1PhysIf"])
+
 dn_width = 50
 descr_width = 20
 speed_width = 8
@@ -813,14 +813,14 @@ print("-" * 66)
 for item in llist:
     try:
         dn = item["l1PhysIf"]["attributes"]["dn"]
-        descr = item["l1PhysIf"]["attributes"].get("descr", "")  # Используем .get() для обработки отсутствующего ключа
+        descr = item["l1PhysIf"]["attributes"].get("descr", "") 
         speed = item["l1PhysIf"]["attributes"]["speed"]
         mtu = item["l1PhysIf"]["attributes"]["mtu"]
 
         print(f"{dn:<{dn_width}} {descr:<{descr_width}} {speed:>{speed_width}} {mtu:>{mtu_width}}")
 
     except KeyError as e:
-        print(f"Ошибка: Отсутствует ключ {e} в данных")
+        print("error")
 
 
   
