@@ -813,7 +813,7 @@ print("-" * 66)
 for item in llist:
     try:
         dn = item["l1PhysIf"]["attributes"]["dn"]
-        descr = item["l1PhysIf"]["attributes"].get("descr", "")  
+        descr = item["l1PhysIf"]["attributes"].get("descr", "") 
         speed = item["l1PhysIf"]["attributes"]["speed"]
         mtu = item["l1PhysIf"]["attributes"]["mtu"]
 
@@ -821,6 +821,3 @@ for item in llist:
 
     except KeyError as e:
         print("error")
-
-
-  
